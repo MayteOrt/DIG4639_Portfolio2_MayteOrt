@@ -2,12 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { createContext, useCallback, useImperativeHandle } from 'react';
-import { NativeAppEventEmitter, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 const Stack = creatNativeStackNavigator();
-function legExcerciseScreen({ route, navigation }) {
-  let gotolegExcercise = useCallback(() => {
-    navigation.push("LegExcercise", {name: "Skull Crusher"})
+function legExerciseScreen({ route, navigation }) {
+  let gotolegExercise = useCallback(() => {
+    navigation.push("LegExercise", {name: "Skull Crusher"})
   })
   return(
     <View style={styles.container}>
