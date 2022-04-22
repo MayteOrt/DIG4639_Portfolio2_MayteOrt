@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useCallback } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const Stack = creatNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 function legExerciseScreen({ route, navigation }) {
   let gotolegExercise = useCallback(() => {
     navigation.push("LegExercise", {name: "Skull Crusher"})
