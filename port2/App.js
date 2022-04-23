@@ -1,52 +1,42 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { useCallback } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 const Stack = createNativeStackNavigator();
+
 function LegExerciseScreen({ navigation }) {
-  let gotoLegExercise = useCallback(() => {
-    navigation.push("LegExercise")
-  })
   return(
     <View style={styles.container}>
       <Text>Leg Exercises <br></br> Let's get started!</Text>
       <Text>Elevated Goblet Squats 3x10</Text>
       <Text>Sumo Squats 3x10</Text>
       <Text>Leg Press 3x10</Text>
-      <Button onPress={gotoLegExercise} title="Home"></Button>
-      <StatusBar style="auto" />
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')}></Button>
     </View>
-  )
+  );
 }
 
 function ArmExerciseScreen({ navigation }) {
-  let gotoArmExercise = useCallback(() => {
-    navigation.push("ArmExercise")
-  })
   return(
     <View style={styles.container}>
       <Text>Arm Exercises <br></br> Let's get started!</Text>
       <Text>Bicep Curl 3x10</Text>
       <Text>Skull Crushers 3x10</Text>
       <Text>Shoulder Press 3x10</Text>
-      <Button onPress={gotoArmExercise} title="Home"></Button>
-      <StatusBar style="auto" />
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')}></Button>
     </View>
-  )
+  );
 }
 
+
 function HomeScreen({ navigation }) {
-  let gotoLegExercise = useCallback(() => {
-    navigation.navigate("LegExercise")
-  })
   return (
     <View style={styles.container}>
       <Text>Welcome to your personal fitness tracker! <br></br> Choose the desired area of focus.</Text>
-      <Button onPress={gotoLegExercise} title="Leg Exercise"></Button>
+      <Button title="Leg Exercise" onPress={()=> navigation.navigate('LegExercise')} ></Button>
      
-      <Button onPress={gotoLegExercise} title="Arm Exercise"></Button>
+      <Button title="Arm Exercise" onPress={()=> navigation.navigate('ArmExercise')} ></Button>
       
       <StatusBar style="auto" />
     </View>
@@ -61,7 +51,6 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="LegExercise" component={LegExerciseScreen} />
         <Stack.Screen name="ArmExercise" component={ArmExerciseScreen} />
-
       </Stack.Navigator>
     </NavigationContainer>
   );
