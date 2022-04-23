@@ -12,6 +12,7 @@ function LegExerciseScreen({ navigation }) {
       <Text  >Leg Exercises <br></br> Let's get started!</Text>
       <Text>Elevated Goblet Squats 3x10</Text>
       <Text>Sumo Squats 3x10</Text>
+      <Text>Leg Press 3x10</Text>
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')}></Button>
     </View>
   );
